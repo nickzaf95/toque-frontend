@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import API from './API';
 import SignInForm from './components/SignInForm';
+import NavBar from "./components/NavBar";
 
 
 class App extends React.Component {
@@ -39,9 +40,19 @@ class App extends React.Component {
     }
   }
 
+  // Sign the user out by setting the username to null and removing the token key from localStorage
+  signOut = () => {
+    this.setState({
+      username: null,
+      accounts: []
+    })
+    localStorage.removeItem("token")
+  }
+
   render() {
     return (
       <Router>
+        <NavBar username={this.state.username} signOut={this.signOut}/>
         <Route exact path='/sign-in' component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
       </Router>
     )
