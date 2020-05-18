@@ -8,6 +8,7 @@ import SignInForm from './components/SignInForm';
 import NavBar from "./components/NavBar";
 import SignUpForm from "./components/SignUpForm";
 import About from './components/About';
+import CreateFamily from './components/CreateFamily';
 
 // Do the post to sign up - create new user
 // Do about page, import logo? DONE
@@ -65,9 +66,10 @@ class App extends React.Component {
     return (
       <Router>
         <NavBar username={this.state.username} signOut={this.signOut}/>
-        <Route exact path="" component={() => <About />} />
+        <Route exact path="/" component={() => <About />} />
         <Route exact path="/sign-in" component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
         <Route exact path="/sign-up" component={() => <SignUpForm isValid={this.isValid} />} />
+        <Route exact path="/create-family" component={() => <CreateFamily user={this.state.username}/>} />
       </Router>
     )
   }

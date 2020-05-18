@@ -3,6 +3,7 @@ const baseURL = "http://localhost:3000"
 const signInURL = `${baseURL}/sign-in`
 const validateURL = `${baseURL}/validate`
 const signUpURL = `${baseURL}/sign-up`
+const createFamilyURL = `${baseURL}/create-family`
 
 // Make a post request to a given URL with a given data object as the body and return the Promise
 const post = (url, data) => {
@@ -48,5 +49,9 @@ const signUp = data => {
     return post(signUpURL, data).then(res => res.json())
 }
 
+const createFamily = data => {
+  return post(createFamilyURL, data).then(res => res.json())
+}
+
 // Export the necessary functions as part of one object which we will import elsewhere
-export default { signIn, validate, get, patch, signUp }
+export default { signIn, validate, get, patch, signUp, createFamily }
