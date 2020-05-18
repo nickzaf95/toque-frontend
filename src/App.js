@@ -9,6 +9,9 @@ import NavBar from "./components/NavBar";
 import SignUpForm from "./components/SignUpForm";
 import About from './components/About';
 import CreateFamily from './components/CreateFamily';
+import Families from './components/Families'
+import CreateRecipe from './components/CreateRecipe';
+import Recipes from './components/Recipes'
 
 // Do the post to sign up - create new user
 // Do about page, import logo? DONE
@@ -24,22 +27,24 @@ import CreateFamily from './components/CreateFamily';
 class App extends React.Component {
   state = {
     username: null,
-    accounts: []
+    families: [],
+    recipes: []
   }
 
   componentDidMount() {
     if (localStorage.token) {
       API.validate (localStorage.token)
       // Pass the username and token the server sends back to signIn
-        .then(json => this.signIn(json.username, json.token))
+        .then(json => this.signIn(json.username, json.token, json.families, json.recipes))
     }
   }
 
-  signIn = (username, token, accounts) => {
+  signIn = (username, token, families, recipes) => {
     // Set the state of username to be the username the server sent back
     this.setState({
       username: username,
-      accounts: accounts
+      families: families,
+      recipes: recipes
     })
     // Store the token the server sent back in localStorage, which is on the client-side
     localStorage.token = token
@@ -57,7 +62,8 @@ class App extends React.Component {
   signOut = () => {
     this.setState({
       username: null,
-      accounts: []
+      families: [],
+      recipes: []
     })
     localStorage.removeItem("token")
   }
@@ -70,6 +76,9 @@ class App extends React.Component {
         <Route exact path="/sign-in" component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
         <Route exact path="/sign-up" component={() => <SignUpForm isValid={this.isValid} />} />
         <Route exact path="/create-family" component={() => <CreateFamily user={this.state.username}/>} />
+        <Route exact path="/families" component={() => <Families families={this.state.families}/> } />
+        <Route exact path="/create-recipe" component={() => <CreateRecipe user={this.state.username}/> } />
+        <Route exact path="/my-recipes" component={() => <Recipes recipes={this.state.recipes} /> } />
       </Router>
     )
   }
