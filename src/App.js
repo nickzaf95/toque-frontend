@@ -13,16 +13,10 @@ import Families from './components/Families'
 import CreateRecipe from './components/CreateRecipe';
 import Recipes from './components/Recipes'
 
-// Do the post to sign up - create new user
+// Do the post to sign up - create new user DONE
 // Do about page, import logo? DONE
-// Do create family and auth for family
-// Do create recipe form and post it
-
-// TypeError (no implicit conversion of nil into String):
-  
-// app/controllers/application_controller.rb:9:in `generate_token'
-// app/controllers/users_controller.rb:7:in `sign_in'
-
+// Do create family and auth for family - JOIN FAMILY LEFT
+// Do create recipe form and post it - DONE - SHOW RECIPE LEFT
 
 class App extends React.Component {
   state = {
