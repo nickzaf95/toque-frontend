@@ -8,9 +8,17 @@ const NavBar = (props) => {
         <NavLink
         to="/home"
         exact
-        // style={Link}
         >
           Home
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+        to=""
+        exact
+        >
+          About
         </NavLink>
       </li>
       
@@ -18,7 +26,6 @@ const NavBar = (props) => {
         <NavLink
         to="/recipes"
         exact
-        // style={Link}
         >
           My Recipes
         </NavLink>
@@ -28,7 +35,6 @@ const NavBar = (props) => {
         <NavLink
         to="/families"
         exact
-        // style={Link}
         >
           Families
         </NavLink>
@@ -38,7 +44,6 @@ const NavBar = (props) => {
         <NavLink
         to="/create-recipe"
         exact
-        // style={Link}
         >
           Create Recipe
         </NavLink>
@@ -48,9 +53,17 @@ const NavBar = (props) => {
         <NavLink
         to="/create-family"
         exact
-        // style={Link}
         >
           Create Family
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+        to="/join-family"
+        exact
+        >
+          Join Family
         </NavLink>
       </li>
 
@@ -67,7 +80,6 @@ const NavBar = (props) => {
         <NavLink
         to="/sign-in"
         exact
-        // style={Link}
         >
           Sign in
         </NavLink>
@@ -81,7 +93,6 @@ const NavBar = (props) => {
         <NavLink
         to="/sign-up"
         exact
-        // style={Link}
         >
           Sign Up
         </NavLink>

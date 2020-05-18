@@ -6,6 +6,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import API from './API';
 import SignInForm from './components/SignInForm';
 import NavBar from "./components/NavBar";
+import SignUpForm from "./components/SignUpForm";
+import About from './components/About';
+
+// Do the post to sign up - create new user
+// Do about page, import logo? DONE
+// Do create family and auth for family
+// Do create recipe form and post it
+
+// TypeError (no implicit conversion of nil into String):
+  
+// app/controllers/application_controller.rb:9:in `generate_token'
+// app/controllers/users_controller.rb:7:in `sign_in'
 
 
 class App extends React.Component {
@@ -53,7 +65,9 @@ class App extends React.Component {
     return (
       <Router>
         <NavBar username={this.state.username} signOut={this.signOut}/>
-        <Route exact path='/sign-in' component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
+        <Route exact path="" component={() => <About />} />
+        <Route exact path="/sign-in" component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
+        <Route exact path="/sign-up" component={() => <SignUpForm isValid={this.isValid} />} />
       </Router>
     )
   }
