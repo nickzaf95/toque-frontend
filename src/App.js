@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import API from './API'
-import SignInForm from './components/SignInForm'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import API from './API';
+import SignInForm from './components/SignInForm';
 
 
 class App extends React.Component {
