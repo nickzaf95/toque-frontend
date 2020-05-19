@@ -10,7 +10,7 @@ class CreateFamily extends React.Component {
     this.state = {
       name: "",
       code: "",
-      username: props.user
+      username: props.username
     }
   }
 

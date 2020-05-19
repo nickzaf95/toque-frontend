@@ -4,7 +4,7 @@ import FamilyCard from "./FamilyCard";
 
 
 class Families extends React.Component {
-
+    
   render() {
     return(
     <div className="families">

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 class RecipeCard extends React.Component {
 
     handleClick = () => {
-        this.props.history.push(`/recipes/${this.props.recipe.id}`)
+        this.props.history.push(`/recipes/${this.props.recipe.name}`)
     }
 
   render() {
@@ -19,3 +19,4 @@ class RecipeCard extends React.Component {
 }
 
 export default withRouter(RecipeCard)
+
