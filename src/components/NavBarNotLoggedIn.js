@@ -7,7 +7,6 @@ const NavBarNotLoggedIn = (props) => {
       <li>
         <NavLink
         to="/home"
-        exact
         >
           Home
         </NavLink>
@@ -16,7 +15,6 @@ const NavBarNotLoggedIn = (props) => {
     <li>
         <NavLink
         to="/sign-in"
-        exact
         >
           Sign in
         </NavLink>
@@ -27,7 +25,6 @@ const NavBarNotLoggedIn = (props) => {
     <li>
         <NavLink
         to="/sign-up"
-        exact
         >
           Sign Up
         </NavLink>

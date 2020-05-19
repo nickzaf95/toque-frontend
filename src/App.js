@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import API from './API';
 import IsLoggedIn from './IsLoggedIn';
 import NotLoggedIn from './NotLoggedIn'
 import NavBar from "./components/NavBar";
@@ -8,6 +10,14 @@ import NavBarNotLoggedIn from './components/NavBarNotLoggedIn'
 class App extends React.Component {
   state = {
     username: null
+  }
+
+  componentDidMount() {
+    if (localStorage.token) {
+      API.validate (localStorage.token)
+      // Pass the username and token the server sends back to signIn
+        .then(json => this.signIn(json.username, json.token))
+    }
   }
 
   signIn = (username, token) => {
@@ -37,15 +47,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="main">
-        {(this.isValid()) ? <NavBar username={this.state.username} signOut={this.signOut}/>
-        : <NavBarNotLoggedIn />}
-        {(this.isValid()) 
-        ? <IsLoggedIn username={this.state.username} />
-        : <NotLoggedIn signIn={this.signIn} /> }
-        {/* <Route exact path="/sign-in" component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
-        <Route exact path="/sign-up" component={() => <SignUpForm isValid={this.isValid} />} /> */}
-      </div>
+      <Router>
+        {
+          this.state.username
+          ? <>
+            <NavBar username={this.state.username} signOut={this.signOut}/>
+            <IsLoggedIn username={this.state.username} />
+          </>
+          : <>
+            <NavBarNotLoggedIn />
+            <NotLoggedIn signIn={this.signIn} />
+          </>
+        }
+      </Router>
     )
   }
 }

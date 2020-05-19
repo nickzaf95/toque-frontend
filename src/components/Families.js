@@ -9,7 +9,7 @@ class Families extends React.Component {
     return(
     <div className="families">
         <p>
-            { this.props.families.map(family => <FamilyCard family={family} /> )}
+            { /* this.props.families.map(family => <FamilyCard family={family} /> )*/ }
         </p>
     </div>
     )
