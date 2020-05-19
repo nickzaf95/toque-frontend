@@ -5,7 +5,7 @@ class FamilyCard extends React.Component {
 
   render() {
     return(
-    <div className="families">
+    <div className="familyCard">
         <div>
             {this.props.family.name}
             {//On click go to all recipes of specific family

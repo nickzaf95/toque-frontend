@@ -66,13 +66,13 @@ class App extends React.Component {
     return (
       <Router>
         <NavBar username={this.state.username} signOut={this.signOut}/>
-        <Route exact path="/" component={() => <About />} />
+        <Route exact path="/home" component={() => <About />} />
         <Route exact path="/sign-in" component={() => <SignInForm signIn={this.signIn} isValid={this.isValid} />} />
         <Route exact path="/sign-up" component={() => <SignUpForm isValid={this.isValid} />} />
         <Route exact path="/create-family" component={() => <CreateFamily user={this.state.username}/>} />
         <Route exact path="/families" component={() => <Families families={this.state.families}/> } />
         <Route exact path="/create-recipe" component={() => <CreateRecipe user={this.state.username}/> } />
-        <Route exact path="/my-recipes" component={() => <Recipes recipes={this.state.recipes} /> } />
+        <Route exact path="/recipes" component={() => <Recipes recipes={this.state.recipes} /> } />
       </Router>
     )
   }

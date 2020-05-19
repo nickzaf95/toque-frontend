@@ -12,15 +12,6 @@ const NavBar = (props) => {
           Home
         </NavLink>
       </li>
-
-      <li>
-        <NavLink
-        to=""
-        exact
-        >
-          About
-        </NavLink>
-      </li>
       
       <li>
         <NavLink
