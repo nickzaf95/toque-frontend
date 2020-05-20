@@ -33,8 +33,12 @@ const patch = (url, data) => {
   }
 
 // Make a get request to a given URL and return the Promise. If a token has been provided, include it as a header called Authorization
-const get = (url, token) => {
-  return token ? fetch(url, { headers: { AUTHORIZATION: token } }) : fetch(url)
+const get = (url) => {
+  return fetch(url, { headers: { AUTHORIZATION: localStorage.getItem('token') } })
+}
+
+const getStuff = (url) => {
+  return fetch(url).then(res => res.json())
 }
 
 // Use the get function to make a request to the validate route and parse the response into JSON
@@ -60,4 +64,4 @@ const createRecipe = data => {
 }
 
 // Export the necessary functions as part of one object which we will import elsewhere
-export default { signIn, validate, get, patch, signUp, createFamily, createRecipe }
+export default { signIn, validate, get, patch, signUp, createFamily, createRecipe, getStuff }
