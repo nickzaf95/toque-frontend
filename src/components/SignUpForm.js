@@ -3,7 +3,6 @@ import API from "../API"
 import { Button, Form } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 
-
 class SignUpForm extends React.Component {
   constructor(props) {
     super()
