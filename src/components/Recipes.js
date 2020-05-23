@@ -6,19 +6,25 @@ import API from '../API';
 
 class Recipes extends React.Component {
 
-//   state = {
-//       recipes: API.getRecipes(username)
-//   }
+    state = {
+        username: this.props.username,
+        recipes: []
+    }
 
-  render() {
-    return(
-    <div className="recipes">
-        <p>
-            { this.state.recipes.map(recipe => <RecipeCard recipe={recipe} /> )}
-        </p>
-    </div>
-    )
-  }
+    componentDidMount() {
+        API.get("http://localhost:3000/recipes")
+        .then(recipes => this.setState({recipes: recipes.recipes}))
+    }
+
+    render() {
+        return(
+        <div className="recipes">
+            <p>
+                { this.state.recipes.map(recipe => <RecipeCard recipe={recipe} /> )}
+            </p>
+        </div>
+        )
+    }
 }
 
 export default withRouter(Recipes)

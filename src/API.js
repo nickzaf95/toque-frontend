@@ -5,6 +5,7 @@ const validateURL = `${baseURL}/validate`
 const signUpURL = `${baseURL}/sign-up`
 const createFamilyURL = `${baseURL}/create-family`
 const createRecipeURL = `${baseURL}/create-recipe`
+const joinFamilyURL = `${baseURL}/join-family`
 
 
 // Make a post request to a given URL with a given data object as the body and return the Promise
@@ -34,16 +35,12 @@ const patch = (url, data) => {
 
 // Make a get request to a given URL and return the Promise. If a token has been provided, include it as a header called Authorization
 const get = (url) => {
-  return fetch(url, { headers: { AUTHORIZATION: localStorage.getItem('token') } })
-}
-
-const getStuff = (url) => {
-  return fetch(url).then(res => res.json())
+  return fetch(url, { headers: { AUTHORIZATION: localStorage.getItem('token') } }).then(response => response.json())
 }
 
 // Use the get function to make a request to the validate route and parse the response into JSON
-const validate = token => {
-  return get(validateURL, token).then(response => response.json())
+const validate = () => {
+  return get(validateURL).then(response => response.json())
 }
 
 // Use the post function to make a request to the validate route and parse the response into JSON
@@ -59,9 +56,13 @@ const createFamily = data => {
   return post(createFamilyURL, data).then(res => res.json())
 }
 
+const joinFamily = data => {
+  return post(joinFamilyURL, data).then(res => res.json())
+}
+
 const createRecipe = data => {
   return post(createRecipeURL, data).then(res => res.json())
 }
 
 // Export the necessary functions as part of one object which we will import elsewhere
-export default { signIn, validate, get, patch, signUp, createFamily, createRecipe, getStuff }
+export default { signIn, validate, get, patch, signUp, createFamily, createRecipe, joinFamily }

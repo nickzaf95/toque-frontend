@@ -13,17 +13,14 @@ class Families extends React.Component {
 
     componentDidMount() {
         API.get("http://localhost:3000/families")
-        .then(response => response.json())
-        .then(families => this.setState({families: families}))
+        .then(families => this.setState({families: families.families}))
     }
     
   render() {
     return(
     <div className="families">
         <p>
-            {/* { this.state.families.map(family => <FamilyCard family={family} /> )} */}
-            {/* {this.state.families.families.map(family => console.log(family.name))} */}
-            
+            { this.state.families.map(family => <FamilyCard family={family} /> )}            
         </p>
     </div>
     )
