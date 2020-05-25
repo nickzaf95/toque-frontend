@@ -4,12 +4,12 @@ import { Button, Form } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 
 
-class CreateFamily extends React.Component {
+class EditFamily extends React.Component {
   constructor(props) {
     super()
     this.state = {
-      name: "",
-      code: "",
+      name: props.family.name,
+      code: props.family.code,
       username: props.username
     }
   }
@@ -47,4 +47,4 @@ class CreateFamily extends React.Component {
   }
 }
 
-export default withRouter(CreateFamily)
+export default withRouter(EditFamily)

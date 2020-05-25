@@ -8,6 +8,7 @@
   padding: 0;
   overflow: hidden;
   background-color: #cecece;
+  cursor: pointer;
 }
 
 li a {
@@ -17,6 +18,7 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   border-bottom: 1px solid #bbb;
+  cursor: pointer;
 }
 
 li a:hover {
@@ -45,6 +47,14 @@ li a:hover {
   border-radius: 10px;
 }
 
+.recipes{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .ui.card:first-child {
   margin-top: 0;
 }
@@ -58,6 +68,10 @@ li a:hover {
   font-size: calc(8px + 2vmin);
   color: rgb(7, 7, 7);
   border-radius: 10px;
+}
+
+.button {
+  cursor: pointer;
 }
 
 .submitbutton {

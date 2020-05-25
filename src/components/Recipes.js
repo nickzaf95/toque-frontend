@@ -22,6 +22,7 @@ class Recipes extends React.Component {
             <p>
                 { this.state.recipes.map(recipe => <RecipeCard recipe={recipe} /> )}
             </p>
+            <br/>
         </div>
         )
     }

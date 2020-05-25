@@ -1,5 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import RecipeShow from './RecipeShow'
+
 
 class RecipeCard extends React.Component {
 
@@ -13,27 +15,26 @@ class RecipeCard extends React.Component {
         })
     }
 
+    handleBack = () => {
+        this.setState({
+            clicked: !this.state.clicked
+        })
+    }
+
   render() {
     return(
-    <div className="recipes">
-        <div onClick={this.handleClick}>
-            {this.props.recipe.name}
-        </div>
-        <div>
+    <div  onClick={this.handleClick}>
+        <div className="recipes">
             {
                 (this.state.clicked) ?
-                <div>
-                    <p>
-                        {this.props.recipe.ingredients}
-                    </p>
-                    <p>
-                        {this.props.recipe.method}
-                    </p>
-                </div>
+                <RecipeShow recipe={this.props.recipe} back={this.handleBack}/>
                 :
-                null
+                <div className="recipes">
+                    {this.props.recipe.name}
+                </div>
             }
         </div>
+        <br/>
     </div>
     )
   }

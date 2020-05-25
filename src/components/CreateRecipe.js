@@ -26,7 +26,7 @@ class CreateRecipeForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     API.createRecipe(this.state)
-    .then(() => this.props.history.push('/my-recipes'))
+    .then(() => this.props.history.push('/recipes'))
   }
 
   render() {

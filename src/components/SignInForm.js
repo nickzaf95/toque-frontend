@@ -33,13 +33,12 @@ class SignInForm extends React.Component {
     <div className="signinform">
         <Form onSubmit={this.handleSubmit}>
             <Form.Field>
-                <label>Username</label>
-                
+                <label>Username </label>
                 <input type="text" name="username" placeholder='username' onChange={this.handleChange}/>
             </Form.Field>
             <br/>
             <Form.Field>
-                <label>Password</label>
+                <label>Password </label>
                 <input type="password" name="password" placeholder='password' onChange={this.handleChange}/>
             </Form.Field>
             <br/>

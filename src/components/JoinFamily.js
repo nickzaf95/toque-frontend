@@ -28,15 +28,15 @@ class JoinFamily extends React.Component {
 
   render() {
     return(
-    <div className="form">
+    <div className="signinform">
         <Form onSubmit={this.handleSubmit}>
             <Form.Field>
-                <label>Name</label>
+                <label>Name </label>
                 <input type="text" name="name" placeholder='name' onChange={this.handleChange}/>
             </Form.Field>
             <br/>
             <Form.Field>
-                <label>Code</label>
+                <label>Code </label>
                 <input type="text" name="code" placeholder='code' onChange={this.handleChange}/>
             </Form.Field>
             <br/>

@@ -6,7 +6,8 @@ import RecipeCard from './RecipeCard'
 class FamilyShow extends React.Component {
 
     state = {
-        recipes: []
+        recipes: [],
+        selectedRecipe: false
     }
 
     componentDidMount() {
@@ -16,12 +17,21 @@ class FamilyShow extends React.Component {
         }))
     }
 
+    handleSelection = () => {
+        this.setState({
+            selectedRecipe: true
+        })
+    }
+
     render() {
         return (
             <div className="familyshow">
-                <h3>{this.props.family.name}</h3>
-                <div className="recipes">
-                    {this.state.recipes.map(recipe => <RecipeCard recipe={recipe} />)}
+                <h2>{this.props.family.name}</h2>
+                <div>
+                    <h3>Recipes</h3>
+                </div>
+                <div >
+                    {this.state.recipes.map(recipe => <RecipeCard recipe={recipe} handleSelection={this.handleSelection}/>)}
                 </div>
             </div>
         )
@@ -30,6 +40,3 @@ class FamilyShow extends React.Component {
 }
 
 export default withRouter(FamilyShow)
-
-
-// this.state.recipes.map(recipe => <RecipeCard recipe={recipe} />

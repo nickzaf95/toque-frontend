@@ -5,7 +5,6 @@ import FamilyCard from "./FamilyCard";
 import FamilyShow from "./FamilyShow"
 import { Card, Button } from "semantic-ui-react";
 
-
 class Families extends React.Component {
 
     state = {
@@ -32,16 +31,18 @@ class Families extends React.Component {
     
   render() {
     return(
-    <div className="families">
-        <div>
+    <div >
+        <div className="recipes">
             {
                 (this.state.selectedFamily)
                 ?
-                <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
+                null
                 :
                 <h2>Families</h2>
             }
         </div>
+        <br/>
+        <div className="recipes">
         {
             (this.state.selectedFamily)
             ?
@@ -51,6 +52,16 @@ class Families extends React.Component {
                 { this.state.families.map(family => <FamilyCard family={family} selection={this.handleFamilyClick} /> )}            
             </Card.Group>
         }
+        </div>
+        <div className="recipes">
+            {
+                (this.state.selectedFamily)
+                ?
+                <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
+                :
+                null
+            }
+        </div>
     </div>
     )
   }
