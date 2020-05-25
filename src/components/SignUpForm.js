@@ -1,6 +1,6 @@
 import React from 'react'
 import API from "../API"
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Checkbox } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 
 class SignUpForm extends React.Component {
@@ -32,6 +32,7 @@ class SignUpForm extends React.Component {
         <Form onSubmit={this.handleSubmit}>
             <Form.Field>
                 <label>Full Name</label>
+                
                 <input type="text" name="full_name" placeholder='full_name' onChange={this.handleChange}/>
             </Form.Field>
             <br/>
@@ -48,9 +49,13 @@ class SignUpForm extends React.Component {
             <Form.Field>
                 <label>Email Address</label>
                 <input type="text" name="email" placeholder='email' onChange={this.handleChange}/>
+            </Form.Field >
+            <br/>
+            <Form.Field>
+                <Checkbox label='I agree to the Terms and Conditions' />
             </Form.Field>
             <br/>
-            <Button type='submit'>Submit</Button>
+            <Button className="submitbutton" type='submit'>Submit</Button>
         </Form>
     </div>
     )

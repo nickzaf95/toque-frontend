@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
   return (
-    <ul>
+    <ul className="navbar">
       <li>
         <NavLink
         to="/home"
@@ -58,38 +58,15 @@ const NavBar = (props) => {
         </NavLink>
       </li>
 
-      { props.username ? 
-      <li className="logout" onClick={ props.signOut }>
+      
+    <li className="logout" onClick={ props.signOut }>
       <NavLink
       to="/sign-in"
       exact>
         Log Out
       </NavLink>
     </li>
-    :
-    <li>
-        <NavLink
-        to="/sign-in"
-        exact
-        >
-          Sign in
-        </NavLink>
-      </li>
-    }
-
-    { props.username ? 
-      null
-    :
-    <li>
-        <NavLink
-        to="/sign-up"
-        exact
-        >
-          Sign Up
-        </NavLink>
-      </li>
-    }
-
+    
     </ul>
   );
 };

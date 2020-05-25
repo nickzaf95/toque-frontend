@@ -28,7 +28,7 @@ class JoinFamily extends React.Component {
 
   render() {
     return(
-    <div className="joinFamily">
+    <div className="form">
         <Form onSubmit={this.handleSubmit}>
             <Form.Field>
                 <label>Name</label>

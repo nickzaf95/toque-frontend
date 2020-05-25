@@ -28,7 +28,7 @@ class CreateFamily extends React.Component {
 
   render() {
     return(
-    <div className="createFamily">
+    <div className="form">
         <Form onSubmit={this.handleSubmit}>
             <Form.Field>
                 <label>Name</label>
