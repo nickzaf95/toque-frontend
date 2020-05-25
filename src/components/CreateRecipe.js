@@ -8,7 +8,7 @@ class CreateRecipeForm extends React.Component {
   constructor(props) {
     super()
     this.state = {
-      username: props.user,
+      username: props.username,
       name: "",
       ingredients: "",
       method: "",

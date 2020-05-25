@@ -31,7 +31,7 @@ class Families extends React.Component {
     
   render() {
     return(
-    <div >
+    <div>
         <div className="recipes">
             {
                 (this.state.selectedFamily)

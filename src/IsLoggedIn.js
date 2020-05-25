@@ -24,7 +24,7 @@ class App extends React.Component {
         <Route exact path="/edit-family" component={() => <FamilyEdit username={this.state.username} /> } />
         <Route exact path="/edit-recipe" component={() => <RecipeEdit username={this.state.username} /> } />
         <Route exact path="/join-family" component={() => <JoinFamily username={this.state.username}/> } />
-        <Route exact path="/create-recipe" component={() => <CreateRecipe user={this.state.username}/> } />
+        <Route exact path="/create-recipe" component={() => <CreateRecipe username={this.state.username}/> } />
         <Route exact path="/recipes" component={() => <Recipes username={this.state.username} /> } />
       </>
     )
