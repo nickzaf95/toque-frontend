@@ -28,6 +28,10 @@ class Families extends React.Component {
             selectedFamily: false
         })
     }
+
+    handleEdit = () => {
+        this.props.history.push("/edit-family")
+    }
     
   render() {
     return(
@@ -61,6 +65,8 @@ class Families extends React.Component {
                 :
                 null
             }
+            <br/>
+            <Button className="submitbutton" type='edit' onClick={this.handleEdit}>Edit a Family?</Button>
         </div>
     </div>
     )

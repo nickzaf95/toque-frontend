@@ -8,6 +8,8 @@ class FamilyCard extends React.Component {
         this.props.selection(this.props.family)
     }
 
+    
+
     render() {
         return(
                 <Card onClick={this.handleClick} >

@@ -18,7 +18,9 @@ class EditFamily extends React.Component {
 
   handleClick = (family) => {
       this.setState({
-          selectedFamily: family
+          selectedFamily: family,
+          name: family.name,
+          code: family.code
       })
   }
 
@@ -26,6 +28,10 @@ class EditFamily extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  handleBack = () => {
+      this.setState({selectedFamily: false})
   }
 
   handleSubmit = (e) => {
@@ -42,7 +48,7 @@ class EditFamily extends React.Component {
 
   render() {
     return(
-        (this.state.selectedFamily)
+        (!this.state.selectedFamily)
         ?
         <div>
         <div className="recipes">
@@ -58,15 +64,6 @@ class EditFamily extends React.Component {
             </Card.Group>
         }
         </div>
-        <div className="recipes">
-            {
-                (this.state.selectedFamily)
-                ?
-                <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
-                :
-                null
-            }
-        </div>
     </div>
     :
     <div className="signinform">
@@ -81,7 +78,8 @@ class EditFamily extends React.Component {
                 <input type="text" name="code" placeholder={this.state.code} onChange={this.handleChange}/>
             </Form.Field>
             <br/>
-            <Button type='submit'>Save</Button>
+            <Button className="submitbutton" type='submit'>Save</Button>
+            <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
         </Form>
     </div>
     )

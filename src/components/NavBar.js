@@ -51,6 +51,15 @@ const NavBar = (props) => {
 
       <li>
         <NavLink
+        to="/edit-family"
+        exact
+        >
+          Edit Family
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
         to="/join-family"
         exact
         >
