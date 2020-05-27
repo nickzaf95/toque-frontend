@@ -25,30 +25,28 @@ li a:hover {
   background-color: #cecece;
 }
 
-/* .form{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(7, 7, 7);
-  border-radius: 10px;
-} */
-
 .signinform {
   min-height: 100vh;
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(7, 7, 7);
   border-radius: 10px;
+  text-align: center;
+}
+
+.helper {
+  text-align: center;
+}
+
+.ui.cards {
+  justify-content: center;
 }
 
 .recipes{
-  display: flex;
+  display: inline-block;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -72,6 +70,13 @@ li a:hover {
 
 .button {
   cursor: pointer;
+}
+
+.content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
 }
 
 .submitbutton {

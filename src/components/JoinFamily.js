@@ -32,11 +32,13 @@ class JoinFamily extends React.Component {
         <Form onSubmit={this.handleSubmit}>
             <Form.Field>
                 <label>Name </label>
+                <br/>
                 <input type="text" name="name" placeholder='name' onChange={this.handleChange}/>
             </Form.Field>
             <br/>
             <Form.Field>
                 <label>Code </label>
+                <br/>
                 <input type="text" name="code" placeholder='code' onChange={this.handleChange}/>
             </Form.Field>
             <br/>

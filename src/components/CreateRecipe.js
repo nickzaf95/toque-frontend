@@ -31,36 +31,47 @@ class CreateRecipeForm extends React.Component {
 
   render() {
     return(
-    <div className="signinform">
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Field>
-                <label>Name</label>
-                <input type="text" name="name" placeholder='name' onChange={this.handleChange}/>
-            </Form.Field>
+        <div>
             <br/>
-            <Form.Field>
-                <label>Ingredients</label>
-                <input type="text" name="ingredients" placeholder='ingredients' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Form.Field>
-                <label>Method</label>
-                <input type="text" name="method" placeholder='method' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Form.Field>
-                <label>Image</label>
-                <input type="text" name="image" placeholder='image_url' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Form.Field>
-                <label>Video</label>
-                <input type="text" name="video" placeholder='video_url' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Button type='submit'>Submit</Button>
-        </Form>
-    </div>
+            <div className="recipes">
+                <h2>Create a Recipe</h2>
+            </div>
+            <div className="signinform">
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field>
+                        <label>Name</label>
+                        <br/>
+                        <input type="text" name="name" placeholder='name' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Form.Field>
+                        <label>Ingredients</label>
+                        <br/>
+                        <input type="text" name="ingredients" placeholder='ingredients' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Form.Field>
+                        <label>Method</label>
+                        <br/>
+                        <input type="text" name="method" placeholder='method' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Form.Field>
+                        <label>Image</label>
+                        <br/>
+                        <input type="text" name="image" placeholder='image_url' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Form.Field>
+                        <label>Video</label>
+                        <br/>
+                        <input type="text" name="video" placeholder='video_url' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Button type='submit'>Submit</Button>
+                </Form>
+            </div>
+        </div>
     )
   }
 }

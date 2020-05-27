@@ -30,21 +30,26 @@ class SignInForm extends React.Component {
 
   render() {
     return(
-    <div className="signinform">
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Field>
-                <label>Username </label>
-                <input type="text" name="username" placeholder='username' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Form.Field>
-                <label>Password </label>
-                <input type="password" name="password" placeholder='password' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Button className="submitbutton" type='submit'>Submit</Button>
-        </Form>
-    </div>
+      <div className="helper">
+        <br/>
+        <div className="signinform">
+            <Form onSubmit={this.handleSubmit}>
+                <Form.Field>
+                    <label>Username </label>
+                    <br/>
+                    <input type="text" name="username" placeholder='username' onChange={this.handleChange}/>
+                </Form.Field>
+                <br/>
+                <Form.Field>
+                    <label>Password </label>
+                    <br/>
+                    <input type="password" name="password" placeholder='password' onChange={this.handleChange}/>
+                </Form.Field>
+                <br/>
+                <Button className="submitbutton" type='submit'>Submit</Button>
+            </Form>
+        </div>
+      </div>
     )
   }
 }

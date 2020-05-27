@@ -35,7 +35,8 @@ class Families extends React.Component {
     
   render() {
     return(
-    <div>
+    <div className="helper">
+        <br/>
         <div className="recipes">
             {
                 (this.state.selectedFamily)
@@ -46,7 +47,9 @@ class Families extends React.Component {
             }
         </div>
         <br/>
+        <br/>
         <div className="recipes">
+            <br/>
         {
             (this.state.selectedFamily)
             ?
@@ -65,7 +68,10 @@ class Families extends React.Component {
                 :
                 null
             }
-            <br/>
+        </div>
+        <br/>
+        <br/>
+        <div className="recipes">
             <Button className="submitbutton" type='edit' onClick={this.handleEdit}>Edit a Family?</Button>
         </div>
     </div>

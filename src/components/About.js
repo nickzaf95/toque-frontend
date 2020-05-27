@@ -7,6 +7,7 @@ class About extends React.Component {
   render() {
     return(
     <div className="about">
+        <br/>
         <h2 className="toquetitle">
             Toque
         </h2>
