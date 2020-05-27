@@ -28,23 +28,30 @@ class CreateFamily extends React.Component {
 
   render() {
     return(
-    <div className="signinform">
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Field>
-                <label>Name </label>
+        <div className="helper">
+            <div className="signinform">
                 <br/>
-                <input type="text" name="name" placeholder='name' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Form.Field>
-                <label>Code </label>
-                <br/>
-                <input type="text" name="code" placeholder='code' onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Button type='submit'>Submit</Button>
-        </Form>
-    </div>
+                <div className="recipes">
+                    <h2>Create a Family</h2>
+                    <br/>
+                </div>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field>
+                        <label>Name </label>
+                        <br/>
+                        <input type="text" name="name" placeholder='name' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Form.Field>
+                        <label>Code </label>
+                        <br/>
+                        <input type="text" name="code" placeholder='code' onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Button type='submit'>Submit</Button>
+                </Form>
+            </div>
+        </div>
     )
   }
 }

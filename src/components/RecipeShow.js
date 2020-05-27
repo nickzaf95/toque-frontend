@@ -6,20 +6,27 @@ class RecipeShow extends React.Component {
 
     render() {
         return (
-            <div className="recipeshow">
-                <h5>{this.props.recipe.name}</h5>
-                <Card.Group>
-                <div className="ingredients">
-                    {this.props.recipe.ingredients}
-                </div>
-                </Card.Group>
+            <div className="helper">
                 <br/>
-                <Card.Group>
-                <div className="method">
-                    {this.props.recipe.method}
+                <br/>
+                <div className="signinform">
+                    <Card>
+                        <h2>{this.props.recipe.name}</h2>
+                        <h5>Ingredients</h5>
+                        <Card.Content>
+                            <div className="ingredients">
+                                {this.props.recipe.ingredients}
+                            </div>
+                        </Card.Content>
+                        <h5>Method</h5>
+                        <Card.Content>
+                            <div className="method">
+                                {this.props.recipe.method}
+                            </div>
+                        </Card.Content>
+                    </Card>
+                    {/* <Button className="submitbutton" type='back' onClick={this.props.back}>Back</Button> */}
                 </div>
-                </Card.Group>
-                {/* <Button className="submitbutton" type='back' onClick={this.props.back}>Back</Button> */}
             </div>
         )
     }

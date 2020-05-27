@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import RecipeShow from './RecipeShow'
+import { Card } from 'semantic-ui-react'
 
 
 class RecipeCard extends React.Component {
@@ -23,14 +24,22 @@ class RecipeCard extends React.Component {
 
   render() {
     return(
-    <div  onClick={this.handleClick}>
-        <div className="recipes">
+    <div className="helper" onClick={this.handleClick}>
+        <div>
             {
                 (this.state.clicked) ?
                 <RecipeShow recipe={this.props.recipe} back={this.handleBack}/>
                 :
-                <div className="recipes">
-                    {this.props.recipe.name}
+                <div>
+                    <br/>
+                    <br/>
+                    <Card>
+                        <Card.Content>
+                            <Card.Header>
+                                {this.props.recipe.name}
+                            </Card.Header>
+                        </Card.Content>
+                    </Card>
                 </div>
             }
         </div>

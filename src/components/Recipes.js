@@ -18,12 +18,12 @@ class Recipes extends React.Component {
 
     render() {
         return(
-        <div className="recipes">
-            <p>
-                { this.state.recipes.map(recipe => <RecipeCard recipe={recipe} /> )}
-            </p>
-            <br/>
-        </div>
+            <div className="helper">
+                <div className="signinform">
+                        { this.state.recipes.map(recipe => <RecipeCard recipe={recipe} /> )}
+                    <br/>
+                </div>
+            </div>
         )
     }
 }

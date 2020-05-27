@@ -33,6 +33,11 @@ class SignInForm extends React.Component {
       <div className="helper">
         <br/>
         <div className="signinform">
+        <br/>
+                <div className="recipes">
+                    <h2>Sign In</h2>
+                    <br/>
+                </div>
             <Form onSubmit={this.handleSubmit}>
                 <Form.Field>
                     <label>Username </label>

@@ -36,43 +36,45 @@ class Families extends React.Component {
   render() {
     return(
     <div className="helper">
-        <br/>
-        <div className="recipes">
-            {
-                (this.state.selectedFamily)
-                ?
-                null
-                :
-                <h2>Families</h2>
-            }
-        </div>
-        <br/>
-        <br/>
-        <div className="recipes">
+        <div className="signinform">
             <br/>
-        {
-            (this.state.selectedFamily)
-            ?
-            <FamilyShow family={this.state.selectedFamily} recipes={this.state.recipes} />
-            :
-            <Card.Group>
-                { this.state.families.map(family => <FamilyCard family={family} selection={this.handleFamilyClick} /> )}            
-            </Card.Group>
-        }
-        </div>
-        <div className="recipes">
+            <div>
+                {
+                    (this.state.selectedFamily)
+                    ?
+                    null
+                    :
+                    <h2>Families</h2>
+                }
+            </div>
+            <br/>
+            <br/>
+            <div>
+                {
+                    (this.state.selectedFamily)
+                    ?
+                    <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
+                    :
+                    null
+                }
+            </div>
+            <div>
+                <br/>
             {
                 (this.state.selectedFamily)
                 ?
-                <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
+                <FamilyShow family={this.state.selectedFamily} recipes={this.state.recipes} />
                 :
-                null
+                <Card.Group>
+                    { this.state.families.map(family => <FamilyCard family={family} selection={this.handleFamilyClick} /> )}            
+                </Card.Group>
             }
-        </div>
-        <br/>
-        <br/>
-        <div className="recipes">
-            <Button className="submitbutton" type='edit' onClick={this.handleEdit}>Edit a Family?</Button>
+            </div>
+            <br/>
+            <br/>
+            <div>
+                <Button className="submitbutton" type='edit' onClick={this.handleEdit}>Edit a Family?</Button>
+            </div>
         </div>
     </div>
     )

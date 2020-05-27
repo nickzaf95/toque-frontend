@@ -31,12 +31,14 @@ class CreateRecipeForm extends React.Component {
 
   render() {
     return(
-        <div>
+        <div className="helper">
+            
+            <div className="signinform">
             <br/>
-            <div className="recipes">
+            <div>
                 <h2>Create a Recipe</h2>
             </div>
-            <div className="signinform">
+            <br/>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                         <label>Name</label>

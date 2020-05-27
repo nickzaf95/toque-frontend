@@ -25,13 +25,16 @@ class FamilyShow extends React.Component {
 
     render() {
         return (
-            <div className="familyshow">
-                <h2>{this.props.family.name}</h2>
+            <div className="helper">
                 <div>
-                    <h3>Recipes</h3>
-                </div>
-                <div >
-                    {this.state.recipes.map(recipe => <RecipeCard recipe={recipe} handleSelection={this.handleSelection}/>)}
+                    <h2>{this.props.family.name}</h2>
+                    <br/>
+                    <div>
+                        <h3>Recipes</h3>
+                    </div>
+                    <div >
+                        {this.state.recipes.map(recipe => <RecipeCard recipe={recipe} handleSelection={this.handleSelection}/>)}
+                    </div>
                 </div>
             </div>
         )

@@ -45,6 +45,10 @@ li a:hover {
   justify-content: center;
 }
 
+.ui.form input {
+  text-align: center;
+}
+
 .recipes{
   display: inline-block;
   align-content: center;

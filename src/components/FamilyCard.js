@@ -14,10 +14,9 @@ class FamilyCard extends React.Component {
         return(
                 <Card onClick={this.handleClick} >
                     <Card.Content>
-                        <Card.Header>{this.props.family.name}</Card.Header>
-                        <Card.Description>
-                            {/* put how many recipes each family has */}
-                        </Card.Description>
+                        <Card.Header>
+                            {this.props.family.name}
+                        </Card.Header>
                     </Card.Content>
                 </Card>
         )

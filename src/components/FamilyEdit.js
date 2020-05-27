@@ -50,38 +50,42 @@ class EditFamily extends React.Component {
     return(
         (!this.state.selectedFamily)
         ?
-        <div>
-        <div className="recipes">
+        <div className="helper">
+            <br/>
+            <h2>Click on a Family to Edit</h2>    
+            <br/>
+            <div className="signinform">
             {
-                <h2>Click on a Family to Edit</h2>
+                <Card.Group>
+                    { this.state.families.map(family => <FamilyCard family={family} selection={this.handleClick}/> )}            
+                </Card.Group>
             }
+            </div>
         </div>
-        <br/>
-        <div className="recipes">
-        {
-            <Card.Group>
-                { this.state.families.map(family => <FamilyCard family={family} selection={this.handleClick}/> )}            
-            </Card.Group>
-        }
+        :
+        <div className="helper">
+            <br/>
+            <h3>
+                Edit Family
+            </h3>
+            <br/>
+            <div className="signinform">
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field>
+                        <label>Name </label>
+                        <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Form.Field>
+                        <label>Code </label>
+                        <input type="text" name="code" placeholder={this.state.code} onChange={this.handleChange}/>
+                    </Form.Field>
+                    <br/>
+                    <Button className="submitbutton" type='submit'>Save</Button>
+                    <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
+                </Form>
+            </div>
         </div>
-    </div>
-    :
-    <div className="signinform">
-        <Form onSubmit={this.handleSubmit}>
-            <Form.Field>
-                <label>Name </label>
-                <input type="text" name="name" placeholder={this.state.name} onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Form.Field>
-                <label>Code </label>
-                <input type="text" name="code" placeholder={this.state.code} onChange={this.handleChange}/>
-            </Form.Field>
-            <br/>
-            <Button className="submitbutton" type='submit'>Save</Button>
-            <Button className="submitbutton" type='back' onClick={this.handleBack}>Back</Button>
-        </Form>
-    </div>
     )
   }
 }
